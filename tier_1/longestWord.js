@@ -6,7 +6,14 @@
 
 const LongestWord = {
     init: function(str) {
-        var stringArr = str.split(" ");
+        const stringArr = str.split(" ");
+
+        return this.max(stringArr);
+
+        // return this.loop(stringArr);
+    },
+
+    loop: function(stringArr) {
         let longestWord = "";
 
         for (let i = 0; i < stringArr.length; i++) {
@@ -18,6 +25,11 @@ const LongestWord = {
         }
 
         return longestWord.length;
+    },
+
+    max: function(stringArr) {
+        const arrOfNums = stringArr.map(str => str.length);
+        return Math.max(...arrOfNums);
     }
 };
 
