@@ -9,7 +9,13 @@
 
 const GetFib = {
     recur: function(n) {
-        console.log(n);
+        if (n === 2) {
+            return 1;
+        } else if (n === 1) {
+            return 0;
+        } else {
+            return this.recur(n - 1) + this.recur(n - 2);
+        }
     }
 };
 
